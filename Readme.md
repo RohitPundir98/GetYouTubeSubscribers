@@ -72,4 +72,4 @@ nodemon (optional)
 
 ## Demo
 
-[Click here to Visit Site](https://get-you-tube-subscribers-alma-better-hd4c-iamnaveensingh.vercel.app/).
+[Click here to Visit Site](https://youtube-subs-two.vercel.app/).
