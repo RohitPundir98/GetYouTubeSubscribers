@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Subscribers</title>
+    <!-- Materialize CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <h1 class="center-align">Back-End Project - Get Youtube Subscribers</h1>
+    <hr style="width: 80%" />
+    <div class="container">
+      <p>The API's provided by the application are following</p>
+      <p>
+        GET <a href="/subscribers">All Subscribers</a> Response with an array of
+        subscribers (an Object).
+      </p>
+      <p>
+        GET <a href="/subscribers/names">Subscribers Names</a> Response with an
+        array of subscribers (an object with field name & subscribers channel)
+      </p>
+      <form id="searchForm">
+        <p style="font-size: 16px">
+          GET
+          <label for="subscriberId" style="font-size: inherit"
+            >Subscriber ID:</label
+          >
+          <input
+            type="text"
+            id="subscriberId"
+            name="id"
+            required
+            style="font-size: inherit"
+            required
+          />
+          <button
+            class="btn"
+            type="button"
+            onclick="searchSubscriber()"
+            style="font-size: inherit"
+          >
+            Search
+          </button>
+          Response with a subscriber (an object) with given id.
+        </p>
+      </form>
+    </div>
+
+    <!-- Materialize JavaScript CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      function searchSubscriber() {
+        var subscriberId = document.getElementById("subscriberId").value;
+        // Check if the input field is empty
+        if (!subscriberId.trim()) {
+          alert("Please enter an ID First....");
+          return;
+        }
+        // Modify the URL to include the subscriber ID
+        var url = "/subscribers/" + subscriberId;
+        // Redirect to the new URL
+        window.location.href = url;
+      }
+    </script>
+  </body>
+</html>
